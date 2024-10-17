@@ -9,7 +9,9 @@
 /*   Updated: 2024/10/15 18:19:52 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+//This function is used to "find a needle in a haystack". We iterate through
+//the string ("haystack") for up to a 'len' number of characters to find the "needle"
+//and return a pointer to where the character is in the string.
 #include <stddef.h>
 
 char	*ft_strnstr(char *to_find, char *pile, size_t len)
