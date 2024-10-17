@@ -9,7 +9,11 @@
 /*   Updated: 2024/10/10 14:57:43 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+// This function safely copies a string from the source to the destination buffer.
+// It checks the size of the original string and ensures that no more characters
+// than the specified buffer size are copied. It returns the total length of the
+// original string, allowing the program to handle cases where the input might
+// be too long for the buffer, such as triggering an alert for the user.
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
 	unsigned int	count;
