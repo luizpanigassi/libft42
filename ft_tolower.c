@@ -9,7 +9,9 @@
 /*   Updated: 2024/10/09 19:48:03 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+//This simple function replaces uppercase characters for their lowercase counterparts.
+//We iterate through the string, checking if the character is lower/uppercase, and replace
+//it accordingly, then return the string in the end.
 char	*ft_tolower(char *str)
 {
 	char	*ptr;
