@@ -9,7 +9,9 @@
 /*   Updated: 2024/10/09 18:32:29 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+// This simple function is used to check if the characters in a string are alphanumeric.
+// We use a while loop to iterate through the string and check if the characters are alphanumeric individually. 
+//If there is a single character that is not alphanumeric, it returns 0, and stops the iteration.
 int	ft_isalnum(char *str)
 {
 	if (*str == '\0')
