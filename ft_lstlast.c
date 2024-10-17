@@ -9,7 +9,7 @@
 /*   Updated: 2024/10/17 15:04:45 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+//This function will return the content of the last node in the list.
 #include <stddef.h>
 
 typedef struct s_list
