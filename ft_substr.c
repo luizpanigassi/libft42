@@ -9,7 +9,16 @@
 /*   Updated: 2024/10/17 15:04:10 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+// This function extracts a substring from the given string 's', starting 
+// at the index 'start' and spanning up to 'len' characters. It first 
+// calculates the length of the original string and then determines the 
+// length of the substring to create. If 'start' is greater than or 
+// equal to the length of 's', it returns an empty string. If the 
+// calculated substring length exceeds 'len', it adjusts the length 
+// accordingly. The function allocates memory for the new substring, 
+// copies the relevant portion of 's' into it, adds a null terminator, 
+// and returns the resulting substring. If memory allocation fails, 
+// it returns NULL.
 #include <stdlib.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
