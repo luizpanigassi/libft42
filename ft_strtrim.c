@@ -9,82 +9,15 @@
 /*   Updated: 2024/10/17 15:04:35 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+// This function removes leading and trailing characters from the string s1 
+// that are present in the set of characters defined by 'set'. It first 
+// determines the starting and ending indices of the trimmed string by 
+// iterating through s1 from both ends until it finds characters not in 'set'. 
+// If all characters are trimmed, it returns an empty string. After identifying 
+// the valid range, it allocates memory for the new trimmed string, copies 
+// the relevant portion of s1 into it, and adds a null terminator. If either 
+// s1 or set is NULL, or if memory allocation fails, it returns NULL.
 #include <stddef.h>
-
-int	ft_strlen(char *str)
-{
-	int	length;
-
-	length = 0;
-	while (str[length] != '\0')
-	{
-		length++;
-	}
-	return (length);
-}
-
-char	*ft_strchr(char *str, int c)
-{
-	char	ch;
-
-	ch = (char)c;
-	while (*str)
-	{
-		if (*str == ch)
-			return ((char *)str);
-		str++;
-	}
-	if (ch == '\0')
-		return ((char *)str);
-	return (((void *)0));
-}
-
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
-{
-	unsigned int	count;
-	unsigned int	i;
-
-	count = 0;
-	i = 0;
-	while (src[count] != '\0')
-	{
-		count++;
-	}
-	if (size == 0)
-	{
-		return (count);
-	}
-	while (src[i] != '\0' && i < (size -1))
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (count);
-}
-
-char	*ft_strdup(char *src)
-{
-	char	*copy;
-	size_t	str_length;
-	size_t	i;
-
-	i = 0;
-	str_length = ft_strlen(src);
-	copy = (char *)malloc(str_length + 1);
-	if (copy == NULL)
-	{
-		return (NULL);
-	}
-	while (i < str_length)
-	{
-		copy[i] = src[i];
-		i++;
-	}
-	copy[str_length] = '\0';
-	return (copy);
-}
 
 char	*ft_strtrim(char *s1, char *set)
 {
