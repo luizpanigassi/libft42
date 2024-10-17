@@ -9,7 +9,9 @@
 /*   Updated: 2024/10/15 16:39:53 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+//This function will substitute an n amount of bytes in a string/array to 0.
+//So, if you have "HELLO" as a string, and run bzero with n = 2, you will get
+//a return of "00LLO".
 #include <stddef.h>
 
 void	ft_bzero(void *s, size_t n)
