@@ -1,12 +1,28 @@
-#include <stdio.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: luinasci <luinasci@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/17 14:57:35 by luinasci          #+#    #+#             */
+/*   Updated: 2024/10/17 15:04:45 by luinasci         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-t_list *ft_lstlast(t_list *lst)
+#include <stddef.h>
+
+typedef struct s_list
 {
-    if (lst == NULL)
-        return (NULL);
-    while (ls->next != NULL)
-        lst = lst->next;
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
-    return (lst);
+t_list	*ft_lstlast(t_list *lst)
+{
+	if (lst == NULL)
+		return (NULL);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }

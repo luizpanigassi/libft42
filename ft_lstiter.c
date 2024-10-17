@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luinasci <luinasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/17 15:02:23 by luinasci          #+#    #+#             */
-/*   Updated: 2024/10/17 15:03:36 by luinasci         ###   ########.fr       */
+/*   Created: 2024/10/17 15:34:30 by luinasci          #+#    #+#             */
+/*   Updated: 2024/10/17 15:37:31 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,13 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-int	ft_lstsize(t_list *lst)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	int	count;
-
-	count = 0;
+	if (lst == NULL || f == NULL)
+		return ;
 	while (lst != NULL)
 	{
-		count++;
+		f(lst->content);
 		lst = lst->next;
 	}
-	return (count);
 }

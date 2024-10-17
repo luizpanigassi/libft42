@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luinasci <luinasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/17 15:02:23 by luinasci          #+#    #+#             */
-/*   Updated: 2024/10/17 15:03:36 by luinasci         ###   ########.fr       */
+/*   Created: 2024/10/17 15:29:55 by luinasci          #+#    #+#             */
+/*   Updated: 2024/10/17 15:33:49 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,20 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-int	ft_lstsize(t_list *lst)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	int	count;
+	t_list	*current;
+	t_list	*next;
 
-	count = 0;
-	while (lst != NULL)
+	if (lst == NULL || del == NULL)
+		return ;
+	current = *lst;
+	while (current != NULL)
 	{
-		count++;
-		lst = lst->next;
+		next = current->next;
+		del(current->content);
+		free(current);
+		current = next;
 	}
-	return (count);
+	lst = NULL;
 }

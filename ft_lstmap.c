@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luinasci <luinasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/17 15:02:23 by luinasci          #+#    #+#             */
-/*   Updated: 2024/10/17 15:03:36 by luinasci         ###   ########.fr       */
+/*   Created: 2024/10/17 15:41:31 by luinasci          #+#    #+#             */
+/*   Updated: 2024/10/17 16:01:49 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,26 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-int	ft_lstsize(t_list *lst)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	int	count;
+	t_list	*new_list;
+	t_list	*current;
+	void	*new_content;
+	t_list	*new_node;
 
-	count = 0;
-	while (lst != NULL)
+	new_list = NULL;
+	current = lst;
+	while (current != NULL)
 	{
-		count++;
-		lst = lst->next;
+		new_content = f(current->content);
+		new_node = ft_lstnew(new_content);
+		if (new_node == NULL)
+		{
+			ft_lstclear(&new_list, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_list, del);
+		current = current->next;
 	}
-	return (count);
+	return (new_list);
 }
