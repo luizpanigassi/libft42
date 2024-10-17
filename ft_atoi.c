@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 //This is one of the most annoying functions, in my opinion. It will convert a
 //char into an int. It will iterate through the number using *10 to eliminate the
-//last number, and add '0' to change its value in the ASCII table. If there is an
+//last number, and subtract '0' to build the integer value. If there is an
 //overflow (we can't use INT_MAX here), we return the maximum number available.
 int	ft_atoi(char *str)
 {
