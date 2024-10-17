@@ -9,7 +9,10 @@
 /*   Updated: 2024/10/09 19:38:21 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+//This function returns the last occurrence of a character c inside a string str.
+//It will iterate through the string and keep updating the character found until
+//we reach the terminator, thus returning the last occurrence of the char c,
+//different from strchr, which will find the first occurrence and break the loop.
 char	ft_strrchr(char *str, int c)
 {
 	char	ch;
