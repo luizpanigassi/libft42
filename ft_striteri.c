@@ -9,7 +9,7 @@
 /*   Updated: 2024/10/15 17:29:10 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+//This function will run the function f in all the elements of a string s.
 #include <stddef.h>
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
