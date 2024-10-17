@@ -9,7 +9,9 @@
 /*   Updated: 2024/10/14 15:50:01 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+//This function will allocate memory, and fill the memory with zeros.
+//It's a bit like running malloc, and right after running memset, to prevent any
+//issues with unexpected behavior.
 #include <stddef.h>
 
 void	*ft_calloc(size_t number, size_t size)
