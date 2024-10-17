@@ -9,8 +9,12 @@
 /*   Updated: 2024/10/17 15:28:04 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stddef.h>
+// This function deletes a specific node from the linked list. 
+// It takes a pointer to the node (lst) and a function pointer (del) 
+// used to free the memory of the node's content. If the node is 
+// NULL or the delete function is NULL, the function does nothing. 
+// It first calls the delete function on the node's content to free 
+// that memory, then frees the memory allocated for the node itself.#include <stddef.h>
 
 typedef struct s_list
 {
