@@ -9,7 +9,20 @@
 /*   Updated: 2024/10/15 16:37:55 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+// This function splits the string s into words based on the delimiter character c.
+// It counts the number of words in the string that are separated by the delimiter 
+// and returns the total count. Words are defined as sequences of characters 
+// that are not equal to c.
+// Example: Splitting the string "Hello world" with the delimiter 'w'.
+// The function will separate the string into two parts: 
+// 1. "Hello " (everything before 'w')
+// 2. "orld" (everything after 'w')
+// The resulting array will be: 
+// {
+//     "Hello ", 
+//     "orld", 
+//     NULL  // Indicates the end of the array
+// }
 #include <stddef.h>
 
 size_t	ft_countword(char *s, char c)
