@@ -9,7 +9,11 @@
 /*   Updated: 2024/10/10 16:45:12 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+// This function compares two blocks of memory, regardless of their content types. 
+// It iterates through both blocks byte by byte, comparing the corresponding 
+// bytes. If both blocks are identical, it returns 0. If they differ, it 
+// returns a positive or negative value depending on whether the first block 
+// is greater than or less than the second, respectively.
 #include <stddef.h>
 
 void	ft_memcmp(void *ptr1, void *ptr2, size_t n)
