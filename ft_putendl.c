@@ -9,7 +9,7 @@
 /*   Updated: 2024/10/15 17:48:00 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-//This is just putchr with a linebreak in the end. Simple.
+//This is just putstr with a linebreak in the end. Simple.
 void	ft_putendl_fd(char *s, int fd)
 {
 	while (*s)
