@@ -9,7 +9,10 @@
 /*   Updated: 2024/10/17 15:01:53 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+//This function creates a new node of information with some content. The next node
+//in line will be NULL, as any terminator node should be. Remember to use -> to set
+//the 'next' node in line or the 'content' of the current node. The node was defined
+//by typedef in the first part of the function.
 #include <stddef.h>
 
 typedef struct s_list
