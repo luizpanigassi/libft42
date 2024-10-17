@@ -9,7 +9,10 @@
 /*   Updated: 2024/10/15 18:18:55 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+// Similar to strcpy, this function copies a string. However, unlike strcpy, 
+// you don't need to provide a pre-allocated buffer (which can lead to overflow). 
+// Instead, strdup dynamically allocates memory for the copy, making it safer. 
+// It's important to remember to free the memory after using the copy to avoid memory leaks.
 #include <stddef.h>
 
 char	*ft_strdup(char *src)
