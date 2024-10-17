@@ -9,7 +9,12 @@
 /*   Updated: 2024/10/15 18:19:21 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+// This function safely concatenates the string 'src' to the end of 'dest'.
+// It appends up to 'size - 1' characters from 'src' to 'dest', ensuring that
+// 'dest' is null-terminated. It returns the total length of the resulting 
+// string that 'dest' would have after the concatenation (including the length 
+// of 'src'). If the concatenation is truncated, this value can be used to 
+// check for that condition.
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	char			*dest_ptr;
