@@ -9,6 +9,12 @@
 /*   Updated: 2024/10/17 16:01:49 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+// This function applies a given function f to each node's content in the 
+// original linked list (lst) and creates a new linked list resulting from 
+// the transformed content. It takes three parameters: the original list (lst), 
+// a function pointer (f) that transforms the content, and a function pointer (del) 
+// used to free the memory of any content in case of an error. If the new node 
+// cannot be created, it cleans up any already created nodes using del and returns NULL.
 
 #include <stddef.h>
 
