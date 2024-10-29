@@ -6,36 +6,30 @@
 /*   By: luinasci <luinasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 16:52:35 by luinasci          #+#    #+#             */
-/*   Updated: 2024/10/15 18:19:52 by luinasci         ###   ########.fr       */
+/*   Updated: 2024/10/28 17:41:33 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-//This function is used to "find a needle in a haystack". We iterate through
-//the string ("haystack") for up to a 'len' number of characters to find the "needle"
-//and return a pointer to where the character is in the string.
-#include <stddef.h>
 
-char	*ft_strnstr(char *to_find, char *pile, size_t len)
+#include "libft.h"
+
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
-	size_t	c;
-	size_t	tf_len;
-	char	*haystack;
+	size_t	j;
 
 	i = 0;
-	haystack = (char *)pile;
-	tf_len = ft_strlen(to_find);
-	if (tf_len == 0)
+	if (*needle == '\0' || needle == haystack)
 		return ((char *)haystack);
-	while (haystack[i] != '\0' && i < len)
+	if (!needle & !len)
+		return (NULL);
+	while (haystack[i] && i < len)
 	{
-		c = 0;
-		while (haystack[i + c] == to_find[c]
-			&& (i + c) < len && to_find[c] != '\0')
-		{
-			c++;
-		}
-		if (c == tf_len)
-			return ((char *)haystack + i);
+		j = 0;
+		while (haystack[i + j] && needle[j]
+			&& i + j < len && haystack[i + j] == needle[j])
+			j++;
+		if (!needle[j])
+			return ((char *)(haystack + i));
 		i++;
 	}
 	return (NULL);

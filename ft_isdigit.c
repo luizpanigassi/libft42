@@ -6,25 +6,15 @@
 /*   By: luinasci <luinasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 18:24:46 by luinasci          #+#    #+#             */
-/*   Updated: 2024/10/09 18:28:54 by luinasci         ###   ########.fr       */
+/*   Updated: 2024/10/24 17:58:57 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-// This simple function is used to check if the characters in a string are numbers.
-// We use a while loop to iterate through the string and check if the characters are numbers individually. 
-//If there is a single character that is not a number, it returns 0, and stops the iteration.
-int	ft_isdigit(char *str)
+
+int	ft_isdigit(int c)
 {
-	if (*str == '\0')
+	if (c >= '0' && c <= '9')
 	{
-		return (0);
+		return (1);
 	}
-	while (*str != '\0')
-	{
-		if (!(*str >= '0' && *str <= '9'))
-		{
-			return (0);
-		}
-		str++;
-	}
-	return (1);
+	return (0);
 }

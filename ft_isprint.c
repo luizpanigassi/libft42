@@ -6,25 +6,15 @@
 /*   By: luinasci <luinasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 18:36:28 by luinasci          #+#    #+#             */
-/*   Updated: 2024/10/09 19:48:03 by luinasci         ###   ########.fr       */
+/*   Updated: 2024/10/24 18:41:18 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-// This simple function is used to check if the characters in a string are printable.
-// We use a while loop to iterate through the string and check if the characters are printable individually. 
-//If there is a single character that is not printable, it returns 0, and stops the iteration.
-int	ft_isprint(char *str)
+
+int	ft_isprint(int c)
 {
-	if (*str == '\0')
+	if (c < 32 || c > 126)
 	{
 		return (0);
-	}
-	while (*str)
-	{
-		if (*str < 32 || *str > 126)
-		{
-			return (0);
-		}
-		str++;
 	}
 	return (1);
 }

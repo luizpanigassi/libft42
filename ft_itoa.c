@@ -6,58 +6,60 @@
 /*   By: luinasci <luinasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:07:44 by luinasci          #+#    #+#             */
-/*   Updated: 2024/10/15 17:05:38 by luinasci         ###   ########.fr       */
+/*   Updated: 2024/10/29 17:17:32 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-// This function converts an integer (n) into a null-terminated string representation.
-// It handles negative numbers and the special case of zero. 
-// The function first calculates the length of the string needed using ft_num_length. 
-// It allocates memory for the string, including space for the null terminator. 
-// If the input number is negative, it places a '-' at the start of the string.
-// It fills the string with digits from the least significant to the most significant 
-// and returns a pointer to the resulting string. If memory allocation fails, it returns NULL.
-#include <stdlib.h>
 
-int	ft_num_length(int num)
+#include "libft.h"
+
+static char	*ft_char(char *s, unsigned int number, long int len)
 {
-	int	length;
-
-	length = 0;
-	if (num <= 0)
-		length = 1;
-	while (num != 0)
+	while (number > 0)
 	{
-		num /= 10;
-		length++;
+		s[len--] = 48 + (number % 10);
+		number = number / 10;
 	}
-	return (length);
+	return (s);
+}
+
+static long int	ft_len(int n)
+{
+	int	len;
+
+	len = 0;
+	if (n <= 0)
+		len = 1;
+	while (n != 0)
+	{
+		len++;
+		n = n / 10;
+	}
+	return (len);
 }
 
 char	*ft_itoa(int n)
 {
-	int		length;
-	char	*str;
+	char			*s;
+	long int		len;
+	unsigned int	number;
+	int				sign;
 
-	length = ft_num_length(n);
-	str = (char *)malloc(length + 1);
-	if (!str)
+	sign = 1;
+	len = ft_len(n);
+	s = (char *)malloc(sizeof(char) * (len + 1));
+	if (!(s))
 		return (NULL);
-	str[length] = '\0';
+	s[len--] = '\0';
+	if (n == 0)
+		s[0] = '0';
 	if (n < 0)
 	{
-		str[0] = '-';
-		n = -n;
+		sign *= -1;
+		number = n * -1;
+		s[0] = '-';
 	}
-	else if (n == 0)
-	{
-		str[0] = '0';
-		str[1] = '\0';
-		return (str);
-	}
-	while (n > 0)
-	{
-		str[--length] = (n % 10) + '0';
-		n /= 10;
-	}
-	return (str);
+	else
+		number = n;
+	s = ft_char(s, number, len);
+	return (s);
 }

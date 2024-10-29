@@ -6,38 +6,34 @@
 /*   By: luinasci <luinasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 14:43:58 by luinasci          #+#    #+#             */
-/*   Updated: 2024/10/15 18:19:21 by luinasci         ###   ########.fr       */
+/*   Updated: 2024/10/29 15:32:50 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-// This function safely concatenates the string 'src' to the end of 'dest'.
-// It appends up to 'size - 1' characters from 'src' to 'dest', ensuring that
-// 'dest' is null-terminated. It returns the total length of the resulting 
-// string that 'dest' would have after the concatenation (including the length 
-// of 'src'). If the concatenation is truncated, this value can be used to 
-// check for that condition.
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
-{
-	char			*dest_ptr;
-	unsigned int	dest_len;
-	unsigned int	src_len;
 
-	dest_ptr = dest;
-	dest_len = 0;
-	src_len = ft_strlen(src);
-	if (dest == (void *)0 || src == (void *)0)
-		return (size);
-	while (*dest_ptr != '\0' && dest_len < size)
+#include "libft.h"
+
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
+{
+	size_t	i;
+	size_t	j;
+	size_t	dest_length;
+	size_t	src_length;
+
+	src_length = ft_strlen(src);
+	dest_length = ft_strlen(dst);
+	j = dest_length;
+	i = 0;
+	if (dest_length < size - 1 && size > 0)
 	{
-		dest_ptr++;
-		dest_len++;
+		while (src[i] && dest_length + i < size - 1)
+		{
+			dst[j] = src[i];
+			j++;
+			i++;
+		}
+		dst[j] = 0;
 	}
-	if (dest_len == size)
-		return (size + src_len);
-	while (*src != '\0' && (dest_len + 1) < size)
-	{
-		*dest_ptr++ = *src++;
-		dest_len++;
-	}
-	*dest_ptr = '\0';
-	return (dest_len + src_len);
+	if (dest_length >= size)
+		dest_length = size;
+	return (dest_length + src_length);
 }

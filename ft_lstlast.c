@@ -6,17 +6,11 @@
 /*   By: luinasci <luinasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 14:57:35 by luinasci          #+#    #+#             */
-/*   Updated: 2024/10/17 15:04:45 by luinasci         ###   ########.fr       */
+/*   Updated: 2024/10/29 15:32:50 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-//This function will return the content of the last node in the list.
-#include <stddef.h>
 
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}	t_list;
+#include "libft.h"
 
 t_list	*ft_lstlast(t_list *lst)
 {

@@ -6,27 +6,16 @@
 /*   By: luinasci <luinasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 18:29:42 by luinasci          #+#    #+#             */
-/*   Updated: 2024/10/09 18:32:29 by luinasci         ###   ########.fr       */
+/*   Updated: 2024/10/24 18:38:05 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-// This simple function is used to check if the characters in a string are alphanumeric.
-// We use a while loop to iterate through the string and check if the characters are alphanumeric individually. 
-//If there is a single character that is not alphanumeric, it returns 0, and stops the iteration.
-int	ft_isalnum(char *str)
+
+int	ft_isalnum(int c)
 {
-	if (*str == '\0')
+	if ((c >= 65 && c <= 90)
+		|| (c >= 97 && c <= 122) || (c >= 48 && c <= 57))
 	{
-		return (0);
+		return (1);
 	}
-	while (*str != '\0')
-	{
-		if (!((*str >= 'A' && *str <= 'Z')
-				|| (*str >= 'a' && *str <= 'z')
-				|| (*str >= '0' && *str <= '9')))
-		{
-			return (0);
-		}
-		str++;
-	}
-	return (1);
+	return (0);
 }

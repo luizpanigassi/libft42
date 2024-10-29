@@ -6,16 +6,16 @@
 /*   By: luinasci <luinasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 17:37:01 by luinasci          #+#    #+#             */
-/*   Updated: 2024/10/15 17:38:40 by luinasci         ###   ########.fr       */
+/*   Updated: 2024/10/29 15:32:45 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-// This function writes a string s to the file descriptor fd.
-// It uses the write system call to output the character. The function
-// takes two parameters: the character to be written and the file 
-// descriptor, allowing for flexible output to different destinations 
-// (like standard output, files, etc.).
+
+#include "libft.h"
+
 void	ft_putstr_fd(char *s, int fd)
 {
+	if (fd < 0)
+		return ;
 	while (*s)
 	{
 		ft_putchar_fd(*s, fd);

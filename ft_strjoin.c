@@ -6,17 +6,11 @@
 /*   By: luinasci <luinasci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 16:00:43 by luinasci          #+#    #+#             */
-/*   Updated: 2024/10/15 18:19:09 by luinasci         ###   ########.fr       */
+/*   Updated: 2024/10/29 15:32:50 by luinasci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-// This function concatenates two strings, s1 and s2, and returns a new 
-// dynamically allocated string containing the result. It first calculates 
-// the lengths of s1 and s2, then allocates enough memory to hold both 
-// strings plus a null terminator. The contents of s1 are copied into the 
-// new string, followed by the contents of s2. Finally, it adds a null 
-// terminator at the end of the new string and returns a pointer to it. 
-// If memory allocation fails, it returns NULL.
-#include <stdlib.h>
+
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
