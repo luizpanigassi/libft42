@@ -18,8 +18,6 @@ The library includes reimplementations of functions for:
 - Output: `ft_putchar_fd`, `ft_putstr_fd`, `ft_putendl_fd`, `ft_putnbr_fd`
 - And more...
 
-See the [libftdeliver](libftdeliver) folder for the full list of implemented functions.
-
 ## Usage
 
 1. **Build the library:**
